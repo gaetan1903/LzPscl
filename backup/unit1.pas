@@ -5,7 +5,8 @@ unit Unit1;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ComCtrls, StdCtrls;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ComCtrls, StdCtrls,
+  Grids;
 
 type
 
@@ -24,6 +25,7 @@ type
     Label1: TLabel;
     Label10: TLabel;
     Label11: TLabel;
+    Label12: TLabel;
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
@@ -33,6 +35,7 @@ type
     Label8: TLabel;
     Label9: TLabel;
     PageControl1: TPageControl;
+    StringGrid1: TStringGrid;
     TabSheet1: TTabSheet;
     TabSheet2: TTabSheet;
     TabSheet3: TTabSheet;
@@ -73,6 +76,21 @@ implementation
 
 { TForm1 }
 
+procedure AfficherPersonne(nbrP:integer; Pers:tab_P);
+var
+  i: integer;
+begin
+  Form1.StringGrid1.RowCount:= nbrP + 1;
+  for i:=1 to nbrP do
+  begin
+      Form1.StringGrid1.Cells[0, i] := IntToStr(Pers[i].CIN);
+      Form1.StringGrid1.Cells[1, i] := Pers[i].Nom;
+      Form1.StringGrid1.Cells[2, i] := Pers[i].Prenom;
+      Form1.StringGrid1.Cells[3, i] := Pers[i].Adresse;
+      Form1.StringGrid1.Cells[4, i] := IntToStr(Pers[i].voitures);
+  end;
+end;
+
 procedure TForm1.Button1Click(Sender: TObject);
 begin
   nbrPersonne += 1;
@@ -81,6 +99,7 @@ begin
   Personne[nbrPersonne].Adresse:= Edit2.Text;
   Personne[nbrPersonne].CIN:= StrToInt(Edit4.Text);
   ShowMessage('Ajout avec Succees');
+  AfficherPersonne(nbrPersonne, Personne);
   Edit1.Text := '';
   Edit2.Text := '';
   Edit3.Text := '';
@@ -105,6 +124,7 @@ begin
            Edit5.Text := '';
            Edit6.Text := '';
            Edit7.Text := '';
+           AfficherPersonne(nbrPersonne, Personne);
            break;
        end
        else
@@ -116,7 +136,7 @@ begin
   if tsisy then
   begin
       nbrPersonne -= 1;
-      ShowMessage('Aucun correspondance pour' + Edit5.Text + '. Veuiller choisir un propriétaire');
+      ShowMessage('Aucun correspondance pour' + Edit7.Text + '. Veuiller choisir un propriétaire');
   end;
 
 end;
