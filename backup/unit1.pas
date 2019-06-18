@@ -170,7 +170,7 @@ var
 begin
      for i:= 1 to nbrPersonne do
      begin
-          if (Form1.ComboBox1.Caption = StrToInt(Personne[i].CIN)) then
+          if (Form1.ComboBox1.Caption = IntToStr(Personne[i].CIN)) then
           begin
               value := i;
               break
