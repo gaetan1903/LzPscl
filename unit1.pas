@@ -15,6 +15,7 @@ type
   TForm1 = class(TForm)
     Button1: TButton;
     Button2: TButton;
+    ComboBox1: TComboBox;
     Edit1: TEdit;
     Edit2: TEdit;
     Edit3: TEdit;
@@ -26,6 +27,9 @@ type
     Label10: TLabel;
     Label11: TLabel;
     Label12: TLabel;
+    Label13: TLabel;
+    Label14: TLabel;
+    Label15: TLabel;
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
@@ -36,12 +40,14 @@ type
     Label9: TLabel;
     PageControl1: TPageControl;
     StringGrid1: TStringGrid;
+    StringGrid2: TStringGrid;
     TabSheet1: TTabSheet;
     TabSheet2: TTabSheet;
     TabSheet3: TTabSheet;
     TabSheet4: TTabSheet;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure ComboBox1Change(Sender: TObject);
   private
 
   public
@@ -91,6 +97,21 @@ begin
   end;
 end;
 
+procedure AffichageVoiture(nbrV: integer; Voit: tab_V);
+var
+  i, j: integer;
+begin
+  for i:= 1 to nbrV do
+  begin
+      if (Form1.ComboBox1.caption = IntToStr(Voit[i].CIN_propri))then
+      begin
+           j += 1;
+           Form1.StringGrid2.Cells[0, j]:= Voit[i].typeV;
+           Form1.StringGrid2.Cells[1, j]:= Voit[i].Marque;
+      end;
+  end;
+end;
+
 procedure TForm1.Button1Click(Sender: TObject);
 begin
   nbrPersonne += 1;
@@ -100,6 +121,7 @@ begin
   Personne[nbrPersonne].CIN:= StrToInt(Edit4.Text);
   ShowMessage('Ajout avec Succees');
   AfficherPersonne(nbrPersonne, Personne);
+  Form1.ComboBox1.Items.Add(IntToStr(Personne[nbrPersonne].CIN));
   Edit1.Text := '';
   Edit2.Text := '';
   Edit3.Text := '';
@@ -139,6 +161,27 @@ begin
       ShowMessage('Aucun correspondance pour ' + Edit7.Text + '. Veuiller choisir un propriétaire');
   end;
 
+end;
+
+procedure TForm1.ComboBox1Change(Sender: TObject);
+var
+  i: integer;
+  value: integer;
+begin
+     for i:= 1 to nbrPersonne do
+     begin
+          if (Form1.ComboBox1.Caption = IntToStr(Personne[i].CIN)) then
+          begin
+              value := i;
+              break
+          end;
+     end;
+     if (value <> 0) then
+     begin
+         label13.Caption:= Personne[value].Nom;
+         label14.Caption:= Personne[value].Prenom;
+         AffichageVoiture(nbrVoiture, Voiture);
+     end;
 end;
 
 end.
