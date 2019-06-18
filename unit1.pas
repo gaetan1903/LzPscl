@@ -101,6 +101,7 @@ procedure AffichageVoiture(nbrV: integer; Voit: tab_V);
 var
   i, j: integer;
 begin
+  Form1.StringGrid2.RowCount := nbrv + 1;
   for i:= 1 to nbrV do
   begin
       if (Form1.ComboBox1.caption = IntToStr(Voit[i].CIN_propri))then
@@ -110,6 +111,7 @@ begin
            Form1.StringGrid2.Cells[1, j]:= Voit[i].Marque;
       end;
   end;
+  Form1.StringGrid2.RowCount:= j + 1;
 end;
 
 procedure TForm1.Button1Click(Sender: TObject);

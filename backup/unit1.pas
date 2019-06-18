@@ -110,6 +110,7 @@ begin
            Form1.StringGrid2.Cells[1, j]:= Voit[i].Marque;
       end;
   end;
+  Form1.StringGrid2.RowCount:= j + 1;
 end;
 
 procedure TForm1.Button1Click(Sender: TObject);
@@ -131,7 +132,7 @@ end;
 procedure TForm1.Button2Click(Sender: TObject);
 var
   i: integer;
-  tsisy : Boolean = False;
+  tsisy : integer = 0;
 begin
   nbrVoiture += 1;
   Voiture[nbrVoiture].typeV:=Edit5.Text;
@@ -151,14 +152,14 @@ begin
        end
        else
        begin
-            Tsisy := True;
+            tsisy := tsisy + 1;
        end;
   end;
 
-  if tsisy then
+  if (tsisy = nbrPersonne) then
   begin
       nbrVoiture -= 1;
-      ShowMessage('Aucun correspondance pour ' + Edit7.Text + '. Veuiller choisir un propriétaire');
+      ShowMessage('Aucun correspondance pour ' + Edit7.Text + ', Veuiller choisir un propriétaire');
   end;
 
 end;
