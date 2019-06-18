@@ -1,0 +1,172 @@
+object Form1: TForm1
+  Left = 425
+  Height = 528
+  Top = 50
+  Width = 851
+  Caption = 'Gestion de Voiture'
+  ClientHeight = 528
+  ClientWidth = 851
+  LCLVersion = '2.0.0.4'
+  object PageControl1: TPageControl
+    Left = 1
+    Height = 528
+    Top = 0
+    Width = 848
+    ActivePage = TabSheet1
+    TabIndex = 0
+    TabOrder = 0
+    object TabSheet1: TTabSheet
+      Caption = 'Personne'
+      ClientHeight = 500
+      ClientWidth = 840
+      object Label1: TLabel
+        Left = 272
+        Height = 55
+        Top = 8
+        Width = 259
+        AutoSize = False
+        Caption = 'Ajout Personne'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clTeal
+        Font.Height = -32
+        Font.Name = 'Segoe UI Symbol'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold, fsUnderline]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label2: TLabel
+        Left = 240
+        Height = 55
+        Top = 280
+        Width = 336
+        AutoSize = False
+        Caption = 'Modification Adresse'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clTeal
+        Font.Height = -32
+        Font.Name = 'Segoe UI Symbol'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold, fsUnderline]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label3: TLabel
+        Left = 480
+        Height = 21
+        Top = 176
+        Width = 36
+        Caption = 'C I N'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit1: TEdit
+        Left = 128
+        Height = 23
+        Top = 88
+        Width = 190
+        TabOrder = 0
+        Text = 'Edit1'
+      end
+      object Label4: TLabel
+        Left = 56
+        Height = 21
+        Top = 88
+        Width = 38
+        Caption = 'Nom'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label5: TLabel
+        Left = 471
+        Height = 21
+        Top = 88
+        Width = 60
+        Caption = 'Prénom'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label6: TLabel
+        Left = 56
+        Height = 21
+        Top = 176
+        Width = 59
+        Caption = 'Adresse'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit2: TEdit
+        Left = 128
+        Height = 23
+        Top = 176
+        Width = 190
+        TabOrder = 1
+        Text = 'Edit2'
+      end
+      object Edit3: TEdit
+        Left = 552
+        Height = 23
+        Top = 86
+        Width = 190
+        TabOrder = 2
+        Text = 'Edit3'
+      end
+      object Button1: TButton
+        Left = 312
+        Height = 31
+        Top = 240
+        Width = 182
+        Caption = 'Enregistrer'
+        OnClick = Button1Click
+        TabOrder = 3
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'Voiture'
+    end
+    object TabSheet3: TTabSheet
+      Caption = 'Affichage Personnes'
+    end
+    object TabSheet4: TTabSheet
+      Caption = 'Affichage Voitures'
+    end
+  end
+  object Edit4: TEdit
+    Left = 560
+    Height = 23
+    Top = 200
+    Width = 190
+    TabOrder = 1
+    Text = 'Edit4'
+  end
+end

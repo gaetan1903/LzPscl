@@ -43,7 +43,7 @@ type
 
   Pers = record
     Nom, Prenom, Adresse: String;
-    CIN: Integer;
+    CIN: integer;
   end;
 
   tab_V = array [1..50] of Voi;
@@ -54,7 +54,7 @@ var
 
   Personne: tab_P;
   Voiture: tab_V;
-  nbrPersonne: Integer;
+  nbrPersonne: Integer = 0;
 
 implementation
 
@@ -64,8 +64,16 @@ implementation
 
 procedure TForm1.Button1Click(Sender: TObject);
 begin
-
-
+  nbrPersonne += 1;
+  Personne[nbrPersonne].Nom:= Edit1.Text;
+  Personne[nbrPersonne].Prenom:= Edit3.Text;
+  Personne[nbrPersonne].Adresse:= Edit2.Text;
+  Personne[nbrPersonne].CIN:= StrToInt(Edit4.Text);
+  ShowMessage('Ajout avec Succees');
+  Edit1.Text := '';
+  Edit2.Text := '';
+  Edit3.Text := '';
+  Edit4.Text := '';
 end;
 
 end.
