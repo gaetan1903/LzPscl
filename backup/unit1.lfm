@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 293
+  Left = 292
   Height = 528
-  Top = 143
+  Top = 116
   Width = 851
   Caption = 'Gestion de Voiture'
   ClientHeight = 528
@@ -12,8 +12,8 @@ object Form1: TForm1
     Height = 528
     Top = 0
     Width = 848
-    ActivePage = TabSheet4
-    TabIndex = 3
+    ActivePage = TabSheet1
+    TabIndex = 0
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = 'Personne'
@@ -154,6 +154,112 @@ object Form1: TForm1
         Width = 190
         TabOrder = 4
       end
+      object Label16: TLabel
+        Left = 16
+        Height = 21
+        Top = 344
+        Width = 144
+        Caption = 'Selectionner C I N :'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label17: TLabel
+        Left = 352
+        Height = 21
+        Top = 424
+        Width = 64
+        Caption = 'Prénom:'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label18: TLabel
+        Left = 16
+        Height = 21
+        Top = 424
+        Width = 42
+        Caption = 'Nom:'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label19: TLabel
+        Left = 16
+        Height = 21
+        Top = 472
+        Width = 63
+        Caption = 'Adresse:'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label20: TLabel
+        Left = 352
+        Height = 21
+        Top = 472
+        Width = 137
+        Caption = 'Nouveau Adresse:'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit8: TEdit
+        Left = 512
+        Height = 23
+        Top = 472
+        Width = 190
+        TabOrder = 5
+      end
+      object Button3: TButton
+        Left = 736
+        Height = 25
+        Top = 468
+        Width = 75
+        Caption = 'Valider'
+        OnClick = Button3Click
+        TabOrder = 6
+      end
+      object ComboBox2: TComboBox
+        Left = 16
+        Height = 23
+        Top = 376
+        Width = 156
+        ItemHeight = 15
+        OnChange = ComboBox2Change
+        TabOrder = 7
+        Text = 'ComboBox2'
+      end
     end
     object TabSheet2: TTabSheet
       Caption = 'Voiture'
@@ -251,7 +357,7 @@ object Form1: TForm1
       object Label11: TLabel
         Left = 552
         Height = 21
-        Top = 120
+        Top = 88
         Width = 141
         Caption = 'CIN PROPRIETAIRE'
         Font.CharSet = ANSI_CHARSET
@@ -267,9 +373,64 @@ object Form1: TForm1
       object Edit7: TEdit
         Left = 536
         Height = 23
-        Top = 152
+        Top = 112
         Width = 190
         TabOrder = 3
+      end
+      object Label21: TLabel
+        Left = 592
+        Height = 21
+        Top = 176
+        Width = 73
+        Caption = 'Matricule'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit9: TEdit
+        Left = 536
+        Height = 23
+        Top = 198
+        Width = 190
+        TabOrder = 4
+      end
+      object Edit10: TEdit
+        Left = 320
+        Height = 23
+        Top = 408
+        Width = 200
+        TabOrder = 5
+      end
+      object Label22: TLabel
+        Left = 320
+        Height = 21
+        Top = 376
+        Width = 183
+        Caption = 'Entrer Matricule Voiture'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Button5: TButton
+        Left = 360
+        Height = 23
+        Top = 448
+        Width = 115
+        Caption = 'Supprimer Voiture'
+        OnClick = Button5Click
+        TabOrder = 6
       end
     end
     object TabSheet3: TTabSheet
@@ -339,7 +500,7 @@ object Form1: TForm1
         ItemHeight = 15
         OnChange = ComboBox1Change
         TabOrder = 0
-        Text = 'ComboBox1'
+        Text = 'C I N'
       end
       object Label13: TLabel
         Left = 16
@@ -374,25 +535,29 @@ object Form1: TForm1
         ParentFont = False
       end
       object StringGrid2: TStringGrid
-        Left = 104
+        Left = 72
         Height = 373
         Top = 72
-        Width = 376
-        ColCount = 2
+        Width = 448
+        ColCount = 3
         FixedCols = 0
         TabOrder = 1
         ColWidths = (
           196
           169
+          91
         )
         Cells = (
-          2
+          3
           0
           0
           'Types'
           1
           0
           'Marques'
+          2
+          0
+          'Matricule'
         )
       end
       object Label15: TLabel

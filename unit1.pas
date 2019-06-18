@@ -15,14 +15,20 @@ type
   TForm1 = class(TForm)
     Button1: TButton;
     Button2: TButton;
+    Button3: TButton;
+    Button5: TButton;
     ComboBox1: TComboBox;
+    ComboBox2: TComboBox;
     Edit1: TEdit;
+    Edit10: TEdit;
     Edit2: TEdit;
     Edit3: TEdit;
     Edit4: TEdit;
     Edit5: TEdit;
     Edit6: TEdit;
     Edit7: TEdit;
+    Edit8: TEdit;
+    Edit9: TEdit;
     Label1: TLabel;
     Label10: TLabel;
     Label11: TLabel;
@@ -30,7 +36,14 @@ type
     Label13: TLabel;
     Label14: TLabel;
     Label15: TLabel;
+    Label16: TLabel;
+    Label17: TLabel;
+    Label18: TLabel;
+    Label19: TLabel;
     Label2: TLabel;
+    Label20: TLabel;
+    Label21: TLabel;
+    Label22: TLabel;
     Label3: TLabel;
     Label4: TLabel;
     Label5: TLabel;
@@ -47,7 +60,10 @@ type
     TabSheet4: TTabSheet;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
     procedure ComboBox1Change(Sender: TObject);
+    procedure ComboBox2Change(Sender: TObject);
   private
 
   public
@@ -58,6 +74,7 @@ type
     typeV: String;
     Marque: String;
     CIN_propri: Integer;
+    matricule: String;
   end;
 
   Pers = record
@@ -109,6 +126,7 @@ begin
            j += 1;
            Form1.StringGrid2.Cells[0, j]:= Voit[i].typeV;
            Form1.StringGrid2.Cells[1, j]:= Voit[i].Marque;
+           Form1.StringGrid2.Cells[2, j]:= Voit[i].matricule;
       end;
   end;
   Form1.StringGrid2.RowCount:= j + 1;
@@ -124,6 +142,7 @@ begin
   ShowMessage('Ajout avec Succees');
   AfficherPersonne(nbrPersonne, Personne);
   Form1.ComboBox1.Items.Add(IntToStr(Personne[nbrPersonne].CIN));
+  Form1.ComboBox2.Items.Add(IntToStr(Personne[nbrPersonne].CIN));
   Edit1.Text := '';
   Edit2.Text := '';
   Edit3.Text := '';
@@ -139,6 +158,7 @@ begin
   Voiture[nbrVoiture].typeV:=Edit5.Text;
   Voiture[nbrVoiture].Marque:=Edit6.Text;
   Voiture[nbrVoiture].CIN_propri:=StrToInt(Edit7.Text);
+  Voiture[nbrVoiture].matricule:= Edit9.text;
   for i:= 1 to nbrPersonne do
   begin
        if (Personne[i].CIN = Voiture[nbrVoiture].CIN_propri) then
@@ -148,6 +168,7 @@ begin
            Edit5.Text := '';
            Edit6.Text := '';
            Edit7.Text := '';
+           Edit9.Text := '';
            AfficherPersonne(nbrPersonne, Personne);
            break;
        end
@@ -163,6 +184,42 @@ begin
       ShowMessage('Aucun correspondance pour ' + Edit7.Text + ', Veuiller choisir un propriétaire');
   end;
 
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+var
+  i, value: integer;
+begin
+
+  for i:= 1 to nbrPersonne do
+  begin
+       if (Form1.ComboBox2.caption = IntToStr(Personne[i].CIN)) then
+       begin
+           value := i;
+           break;
+       end;
+
+  end;
+  if (value <>0) then
+  begin
+     Personne[value].Adresse:= Edit8.Text;
+     ShowMessage('Successfull')
+  end;
+end;
+
+procedure TForm1.Button5Click(Sender: TObject);
+var
+  i: integer;
+begin
+  Edit10.Text;
+  for i:= 1 to nbrVoiture do
+  begin
+       if (Voiture[i].matricule = Edit10.Text) then
+       begin
+            Voiture[i] := Voiture[50];
+       end;
+  end;
+  ShowMessage('Effacer avec succes');
 end;
 
 procedure TForm1.ComboBox1Change(Sender: TObject);
@@ -183,6 +240,27 @@ begin
          label13.Caption:= Personne[value].Nom;
          label14.Caption:= Personne[value].Prenom;
          AffichageVoiture(nbrVoiture, Voiture);
+     end;
+end;
+
+procedure TForm1.ComboBox2Change(Sender: TObject);
+var
+  i: integer;
+  value:integer;
+begin
+     for i:= 1 to nbrPersonne do
+     begin
+          if (Form1.ComboBox2.Caption = IntToStr(Personne[i].CIN)) then
+          begin
+              value := i;
+              break
+          end;
+     end;
+     if (value <> 0) then
+     begin
+         label18.Caption:= 'Nom: ' + Personne[value].Nom;
+         label17.Caption:= 'Prénom: ' + Personne[value].Prenom;
+         label19.Caption:= 'Adresse: ' + Personne[value].Adresse;
      end;
 end;
 
