@@ -1,19 +1,19 @@
 object Form1: TForm1
-  Left = 425
+  Left = 293
   Height = 528
-  Top = 50
+  Top = 143
   Width = 851
   Caption = 'Gestion de Voiture'
   ClientHeight = 528
   ClientWidth = 851
   LCLVersion = '2.0.0.4'
   object PageControl1: TPageControl
-    Left = 1
+    Left = 0
     Height = 528
     Top = 0
     Width = 848
-    ActivePage = TabSheet1
-    TabIndex = 0
+    ActivePage = TabSheet2
+    TabIndex = 1
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = 'Personne'
@@ -75,7 +75,6 @@ object Form1: TForm1
         Top = 88
         Width = 190
         TabOrder = 0
-        Text = 'Edit1'
       end
       object Label4: TLabel
         Left = 56
@@ -131,7 +130,6 @@ object Form1: TForm1
         Top = 176
         Width = 190
         TabOrder = 1
-        Text = 'Edit2'
       end
       object Edit3: TEdit
         Left = 552
@@ -139,7 +137,6 @@ object Form1: TForm1
         Top = 86
         Width = 190
         TabOrder = 2
-        Text = 'Edit3'
       end
       object Button1: TButton
         Left = 312
@@ -150,9 +147,130 @@ object Form1: TForm1
         OnClick = Button1Click
         TabOrder = 3
       end
+      object Edit4: TEdit
+        Left = 552
+        Height = 23
+        Top = 176
+        Width = 190
+        TabOrder = 4
+      end
     end
     object TabSheet2: TTabSheet
       Caption = 'Voiture'
+      ClientHeight = 500
+      ClientWidth = 840
+      object Label7: TLabel
+        Left = 296
+        Height = 55
+        Top = 8
+        Width = 259
+        AutoSize = False
+        Caption = 'Ajout Voitures'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clTeal
+        Font.Height = -32
+        Font.Name = 'Segoe UI Symbol'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold, fsUnderline]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label8: TLabel
+        Left = 272
+        Height = 55
+        Top = 312
+        Width = 320
+        AutoSize = False
+        Caption = 'Modification Voiture'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clTeal
+        Font.Height = -32
+        Font.Name = 'Segoe UI Symbol'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold, fsUnderline]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label9: TLabel
+        Left = 120
+        Height = 21
+        Top = 112
+        Width = 36
+        Caption = 'Type'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Label10: TLabel
+        Left = 120
+        Height = 21
+        Top = 200
+        Width = 59
+        Caption = 'Marque'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Button2: TButton
+        Left = 336
+        Height = 33
+        Top = 256
+        Width = 139
+        Caption = 'Enregistrer'
+        OnClick = Button2Click
+        TabOrder = 0
+      end
+      object Edit5: TEdit
+        Left = 200
+        Height = 23
+        Top = 110
+        Width = 190
+        TabOrder = 1
+      end
+      object Edit6: TEdit
+        Left = 200
+        Height = 23
+        Top = 198
+        Width = 190
+        TabOrder = 2
+      end
+      object Label11: TLabel
+        Left = 552
+        Height = 21
+        Top = 120
+        Width = 141
+        Caption = 'CIN PROPRIETAIRE'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = -16
+        Font.Name = 'Segoe UI'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object Edit7: TEdit
+        Left = 536
+        Height = 23
+        Top = 152
+        Width = 190
+        TabOrder = 3
+      end
     end
     object TabSheet3: TTabSheet
       Caption = 'Affichage Personnes'
@@ -160,13 +278,5 @@ object Form1: TForm1
     object TabSheet4: TTabSheet
       Caption = 'Affichage Voitures'
     end
-  end
-  object Edit4: TEdit
-    Left = 560
-    Height = 23
-    Top = 200
-    Width = 190
-    TabOrder = 1
-    Text = 'Edit4'
   end
 end
